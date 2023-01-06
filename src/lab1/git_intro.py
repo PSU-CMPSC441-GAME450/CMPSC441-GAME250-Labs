@@ -1,4 +1,4 @@
-'''Lab 1.2: Git Intro
+'''Lab 1.1: Git Intro
 
 In this lab, you will learn how to use git and github to manage your code.
 
