@@ -1,0 +1,46 @@
+'''
+Lab 4: Rock-Paper-Scissor AI Agent
+
+In this lab you will build one AI for Rock-Paper-Scissors that defeat a few opponent AI's.
+You will update the AI agent class to create your first AI agent for this course, 
+using the precept sequence to find out which opponent agent you are facing, 
+so that it can beat these three opponent agents:
+
+    Agent Single:  this agent picks a weapon at random at the start, 
+                   and always plays that weapon.  
+                   For example: 2,2,2,2,2,2,2,.....
+
+    Agent Switch:  this agent picks a weapon at random at the start,
+                   and randomly picks a weapon once every 10 rounds (could happen to be the same one).  
+                   For example:  2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,0,0,0,0,0,...
+
+    Agent Mimic:  this agent picks a weapon at random in the first round, 
+                  and then always does what you did the previous round.  
+                  For example:  if you played 1,2,0,1,2,0,1,2,0,...  
+                   then this agent would play 0,1,2,0,1,2,0,1,2,...
+
+Discussions in lab:  You don't know ahead of time which opponent you will be facing, 
+so the first few rounds will be used to figure this out.   How?
+
+Once you've figured out the opponent, apply rules against that opponent. 
+A model-based reflex agent uses rules (determined by its human creator) to decide which action to take.
+
+If your AI is totally random, you should be expected to win about 33% of the time, so here is the requirement:  
+In 100 rounds, you should consistently win at least 85 rounds to be considered a winner.
+'''
+
+from rock_paper_scissor import Player
+from rock_paper_scissor import run_game
+from rock_paper_scissor import random_weapon_select
+
+class AiPlayer(Player):
+    def __init__(self,name):
+        super().__init__(name)
+        self.initial_weapon = random_weapon_select()
+
+    def weapon_selecting_strategy(self):
+        pass
+
+
+if __name__ == '__main__':
+    run_game(AiPlayer("AI"), 100)
