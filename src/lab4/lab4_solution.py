@@ -53,6 +53,9 @@ if __name__ == '__main__':
     for agent in range(3):
         for i in range(100):
             tally = [score for _, score in run_game(AiPlayer("AI"), 100, agent)]
+            if sum(tally) == 0:
+                final_tally[agent] = 0
+            else:
             final_tally[agent] += tally[0]/sum(tally)
 
     print("Final tally: ", final_tally)  
