@@ -56,6 +56,6 @@ if __name__ == '__main__':
             if sum(tally) == 0:
                 final_tally[agent] = 0
             else:
-            final_tally[agent] += tally[0]/sum(tally)
+                final_tally[agent] += tally[0]/sum(tally)
 
     print("Final tally: ", final_tally)  
