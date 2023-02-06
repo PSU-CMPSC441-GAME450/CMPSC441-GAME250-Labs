@@ -30,8 +30,8 @@ A model-based reflex agent uses rules (determined by its human creator) to decid
 If your AI is totally random, you should be expected to win about 33% of the time, so here is the requirement:  
 In 100 rounds, you should consistently win at least 85 rounds to be considered a winner.
 
-You get a 1 point for beating the single agent, 2 points for beating the switch agent, 
-and 2 points for beating the mimic agent.
+You get a 0 point for beating the single agent, 1 points for beating the switch agent, 
+and 4 points for beating the mimic agent.
 
 '''
 
