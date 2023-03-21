@@ -8,6 +8,7 @@ from landscape import get_landscape, get_combat_bg
 from pygame_ai_player import PyGameAIPlayer
 
 from pathlib import Path
+
 sys.path.append(str((Path(__file__) / ".." / "..").resolve().absolute()))
 
 from lab2.cities_n_routes import get_randomly_spread_cities, get_routes
@@ -46,7 +47,13 @@ def displayCityNames(city_locations, city_names):
 
 class State:
     def __init__(
-        self, current_city, destination_city, travelling, encounter_event, cities, routes
+        self,
+        current_city,
+        destination_city,
+        travelling,
+        encounter_event,
+        cities,
+        routes,
     ):
         self.current_city = current_city
         self.destination_city = destination_city
@@ -112,6 +119,9 @@ if __name__ == "__main__":
                 destination = cities[state.destination_city]
                 player_sprite.set_location(cities[state.current_city])
                 state.travelling = True
+                print(
+                    "Travelling from", state.current_city, "to", state.destination_city
+                )
 
         screen.fill(black)
         screen.blit(landscape_surface, (0, 0))
@@ -126,6 +136,8 @@ if __name__ == "__main__":
         if state.travelling:
             state.travelling = player_sprite.move_sprite(destination, sprite_speed)
             state.encounter_event = random.randint(0, 1000) < 2
+            if not state.travelling:
+                print('Arrived at', state.destination_city)
 
         if not state.travelling:
             encounter_event = False
@@ -137,3 +149,6 @@ if __name__ == "__main__":
         else:
             player_sprite.draw_sprite(screen)
         pygame.display.update()
+        if state.current_city == end_city:
+            print('You have reached the end of the game!')
+            break
