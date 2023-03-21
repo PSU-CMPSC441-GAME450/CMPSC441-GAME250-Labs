@@ -96,14 +96,14 @@ class Combat:
         #
         #           Sword |  Arrow |  Fire
         #           ______|________|_______
-        # Sword:    True |  False  |  True
+        # Sword:    False |  False  |  True
         # Arrow:    True  |  True |  False
-        # Fire :    False  |  True  |  False
+        # Fire :    False  |  True  |  True
 
         decisionArray = [  # Sword   Arrow   Fire
-            [True, False, True],  # Sword
+            [False, False, True],  # Sword
             [True, True, False],  # Arrow
-            [False, True, False],  # Fire
+            [False, True, True],  # Fire
         ]
         print(
             f"\n{player.name} used {weapons[player.weapon]}, {opponent.name} used {weapons[opponent.weapon]}"
