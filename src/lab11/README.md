@@ -1,5 +1,5 @@
 # Lab 11: Project Handoff
-You may now consider creating a fork of your respository to work on the project. 
+You may now consider creating a branch of your respository to work on the project. 
 
 
 ## Lab Task 1: Create a Class Diagram of the lab11 folder
