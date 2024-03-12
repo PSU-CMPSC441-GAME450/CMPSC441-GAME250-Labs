@@ -1,5 +1,9 @@
 # From https://codereview.stackexchange.com/questions/237601/simple-python-turn-based-battle-game
+import sys
 import random
+from pathlib import Path
+
+sys.path.append(str((Path(__file__) / ".." / "..").resolve().absolute()))
 from lab4.player import Player
 
 

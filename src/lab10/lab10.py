@@ -10,7 +10,7 @@ from sklearn.neighbors import KNeighborsClassifier
 import pandas as pd
 import numpy as np
 
-data = pd.read_csv("src/lab8/heart.csv")
+data = pd.read_csv("src/lab10/heart.csv")
 
 # Transform the categorical variables into dummy variables.
 print(data.head())

@@ -4,7 +4,7 @@ import random
 from sprite import Sprite
 from pygame_combat import run_pygame_combat
 from pygame_human_player import PyGameHumanPlayer
-from landscape import get_landscape, get_combat_bg
+from lab5.landscape import get_landscape, elevation_to_rgba
 from pygame_ai_player import PyGameAIPlayer
 
 from pathlib import Path
@@ -13,6 +13,9 @@ sys.path.append(str((Path(__file__) / ".." / "..").resolve().absolute()))
 
 from lab2.cities_n_routes import get_randomly_spread_cities, get_routes
 
+get_combat_bg = lambda pixel_map: elevation_to_rgba(
+    get_elevation(pixel_map, 10), "RdPu"
+)
 
 pygame.font.init()
 game_font = pygame.font.SysFont("Comic Sans MS", 15)
