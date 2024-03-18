@@ -28,9 +28,6 @@ def elevation_to_rgba(elevation, cmap="gist_earth"):
 
 
 get_landscape = lambda pixel_map: elevation_to_rgba(get_elevation(pixel_map))
-get_combat_bg = lambda pixel_map: elevation_to_rgba(
-    get_elevation(pixel_map, 10), "RdPu"
-)
 
 
 if __name__ == "__main__":
