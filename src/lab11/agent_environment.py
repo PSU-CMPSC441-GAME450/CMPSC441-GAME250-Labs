@@ -117,6 +117,9 @@ if __name__ == "__main__":
         action = player.selectAction(state)
         if 0 <= int(chr(action)) <= 9:
             if int(chr(action)) != state.current_city and not state.travelling:
+                ''' 
+                Check if a route exist between the current city and the destination city.
+                '''
                 start = city_locations[state.current_city]
                 state.destination_city = int(chr(action))
                 destination = city_locations[state.destination_city]
