@@ -37,7 +37,7 @@ def draw_combat_on_window(combat_surface, screen, player_sprite, opponent_sprite
 
 def run_turn(currentGame, player, opponent):
     players = [player, opponent]
-    states = list(reversed([(player.health, player.weapon) for player in players]))
+    states = list([tuple(player.health for player in players)]*2)
     for current_player, state in zip(players, states):
         current_player.selectAction(state)
 
